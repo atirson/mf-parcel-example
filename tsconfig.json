@@ -1,0 +1,20 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@core/*": ["./src/core/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@pages/*": ["./src/pages/*"],
+    }
+  },
+  "files": ["src/portfolio-main.tsx"],
+  "include": [
+    "src"
+  ],
+  "exclude": ["src/**/*.test*"]
+}
