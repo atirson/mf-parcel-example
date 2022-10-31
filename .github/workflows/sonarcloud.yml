@@ -49,7 +49,7 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.SONAR_CLOUD_ORGANIZATION_KEY }}
         run: |
-          example-command "$SUPER_SECRET"
+          echo ${{ secrets.SONAR_CLOUD_ORGANIZATION_KEY }}
       - name: Analyze with SonarCloud         
 
         # You can pin the exact commit or the version.
