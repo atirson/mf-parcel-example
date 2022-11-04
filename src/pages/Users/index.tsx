@@ -1,17 +1,30 @@
+import { useQuery, gql } from '@apollo/client';
+
+const GET_INFORMATIONS = gql`
+  query Informations {
+    informations {
+      id
+      name
+      description
+    }
+  }
+`;
+
 function Users() {
-  return (
-    <div>
-      <h1>Users Sonar</h1>
-      <div
-        className="p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
-        role="alert"
-      >
-        <span className="font-medium text-clifford">Info alert!</span>
-        {' '}
-        Change a few things up and try submitting again.
-      </div>
+  const { loading, error, data } = useQuery(GET_INFORMATIONS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  return data.informations.map(({ id, name, description }) => (
+    <div key={id}>
+      <h3>{name}</h3>
+      <br />
+      <b>About this location:</b>
+      <p>{description}</p>
+      <br />
     </div>
-  );
+  ));
 }
 
 export default Users;
