@@ -42,7 +42,8 @@
          "consistent-return": "off",
          "no-use-before-define": "off",
          "no-undef": "off",
-         "import/no-unresolved": "off"
+         "import/no-unresolved": "off",
+         "import/no-extraneous-dependencies": "off"
     },
     "settings": {
         "import/resolver": {
