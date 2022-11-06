@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonProps } from './Button';
 
